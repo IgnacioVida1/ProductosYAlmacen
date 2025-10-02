@@ -6,11 +6,13 @@ from dotenv import load_dotenv
 # Cargar variables de entorno
 load_dotenv()
 
-# Configuración de la base de datos MySQL
-DATABASE_URL = os.getenv(
-    "DATABASE_URL", 
-    "mysql+pymysql://root:password@localhost:3306/productos_almacenes"
-)
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT")
+DB_NAME = os.getenv("DB_NAME")
+
+DATABASE_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 # Crear engine de SQLAlchemy
 engine = create_engine(
@@ -36,7 +38,6 @@ def get_db():
 
 # Función para crear las tablas
 def create_tables():
-    from clases import Base
     Base.metadata.create_all(bind=engine)
     print("Tablas creadas exitosamente")
 
