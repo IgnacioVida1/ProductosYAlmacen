@@ -4,8 +4,8 @@ const DetalleController = require("../controllers/DetallePedidoController");
 
 router.post("/", DetalleController.agregarDetalle);
 router.put("/:id", DetalleController.actualizarDetalle);
-router.get("/:id", DetalleController.consultarPedidoId);
-router.get("/", DetalleController.consultarPedidos);
-router.delete("/:id", DetalleController.borrarPedido);
+router.get("/:id", DetalleController.consultarDetalleId);
+router.get("/", DetalleController.consultarDetalles);
+router.delete("/:id", DetalleController.borrarDetalle);
 
 module.exports = router;

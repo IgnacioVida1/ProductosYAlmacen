@@ -43,7 +43,7 @@ exports.consultarDetalles = async (req, res, next) => {
     }
 };
 
-exports.borrarPedido = async (req, res, next) => {
+exports.borrarDetalle = async (req, res, next) => {
     try {
         const detalle = await DetallePedido.findByIdAndDelete(req.params.id, {__v: false});
         if (!detalle) {
