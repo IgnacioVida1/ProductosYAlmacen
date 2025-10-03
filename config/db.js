@@ -5,8 +5,7 @@ mongo_url = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.e
 const connectDB = async () => {
   try {
     await mongoose.connect(mongo_url, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      dbName: process.env.DB_NAME,
     });
     console.log("✅ Conectado a MongoDB");
   } catch (err) {

@@ -39,5 +39,5 @@ app.use(errorHandler);
 
 // Iniciar servidor
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://${procces.env.HOST}:${PORT}, con BD en: ` + process.env.MONGO_URI);
+  console.log(`Servidor corriendo en http://${process.env.HOST}:${PORT}`);
 });
